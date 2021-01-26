@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
-var controller = require("../controller/classes");
+var controller = require("../controller/phandoan");
 
 router.get("/", controller.index);
 router.get("/add", controller.add);

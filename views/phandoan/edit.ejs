@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JG Template</title>
+  <!-- bootstrap CSS -->
+  <link rel="stylesheet" href="/assets/css/bootstrap.css">
+  </style>
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages/list2.css">
+  </style>
+  <!-- font awesome -->
+  <link href="/assets/css/all.css" rel="stylesheet">
+  <script defer src="/assets/js/all.js"></script>
+  <!-- google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200;300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <!-- Bootstrap Switch -->
+  <link rel="stylesheet" href="/assets/css/bootstrap-switch.css">
+  <!-- anychart -->
+  <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+  <script src="https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js"></script>
+  <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js"></script>
+  <script src="https://cdn.anychart.com/releases/v8/js/anychart-data-adapter.min.js"></script>
+  <link href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css" type="text/css" rel="stylesheet">
+  <link href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav id="navbar_top" class="navbar navbar-light">
+    <a class="navbar-brand" href="#">JG</a>
+    <form class="form-inline search-box">
+      <div class="input-group">
+        <input type="search" class="form-control" placeholder="Pesquisar" aria-label="Pesquisar">
+      </div>
+    </form>
+    <div class="user_bar">
+      <button class="btn rounded-circle"><i class="far fa-commenting"></i></button>
+      <button class="btn rounded-circle"><i class="fa fa-cog"></i></button>
+      <button class="rounded-circle bg-light" style="width: 50px; height: 50px;">
+        <i class="far fa-user"></i>
+      </button>
+    </div>
+  </nav>
+  <div class="content-area">
+    <!-- MENU -->
+    <div class="menu">
+      <button class="btn_menu ">
+        <i class="fas fa-home"></i>
+        <span>Dashboard</span>
+      </button>
+      <button class="btn_menu">
+        <i class="fas fa-plus-circle"></i>
+        <span>Quản lý thiếu nhi</span>
+      </button>
+      <button class="btn_menu active">
+        <i class="fas fa-folder"></i>
+        <span>Quản lý ngành</span>
+      </button>
+      <button class="btn_menu">
+        <i class="fas fa-users"></i>
+        <span>Quản lý lớp</span>
+      </button>
+      <button class="btn_menu last">
+        <i class="fas fa-th-large"></i>
+        <span>Điểm thi</span>
+      </button>
+    </div>
+    <div class="content">
+      <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <a class="nav-item nav-link active" id="nav-contact-tab" data-toggle="tab" href="/phandoan/edit" role="tab"
+            aria-controls="nav-contact" aria-selected="true">Cập nhật dữ liệu</a>
+          <a class="nav-item nav-link " href="/phandoan"> Danh sách</a>
+          <a class="nav-item nav-link " href="/phandoan/add"> Thêm ngành mới</a>
+        </div>
+      </nav>
+      <div class="tab-content p-3" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+          <form action="/phandoan/add" method="POST" class="list p-4">
+            <h5>Cập nhật ngành</h5>
+            <hr>
+            <div class="form-group row">
+              <label for="inputPassword3" class="col-sm-2 col-form-label">Tên ngành</label>
+              <div class="col-sm-10">
+                <input type="text" name="name" value="<%- phanDoan.name %>" class="form-control" id="inputPassword3"
+                  placeholder="Tên ngành">
+              </div>
+            </div>
+            <div class="col text-center">
+              <button class="btn btn-sm btn-success">Cập nhật</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap Scripts -->
+  <script src="/assets/js/jquery-3.5.1.min.js"></script>
+  <script src="/assets/js/popper.min.js"></script>
+  <script src="/assets/js/bootstrap.js"></script>
+  <!-- Bootstrap Switch -->
+  <script src="/assets/js/bootstrap-switch.js"></script>
+  <!-- Main JS -->
+  <script src="/assets/js/app.js"></script>
+  <script src="/assets/js/pages/list2.js"></script>
+</body>
+
+</html>

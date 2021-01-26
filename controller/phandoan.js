@@ -1,50 +1,50 @@
 
 
-const Classes = require("../models/classes");
+const PhanDoan = require("../models/phandoan");
 
 module.exports.index = function (req, res) {
-  Classes.find(function (err, data) {
+  PhanDoan.find(function (err, data) {
     if (err) {
       res.json({ result: 0, error: err });
     } else {
-      res.render("classes/index", { classess: data });
+      res.render("phandoan/index", { phanDoan: data, i: 1 });
     }
   })
 }
 
 module.exports.add = function (req, res) {
-  res.render("classes/add");
+  res.render("phandoan/add");
 }
 
 module.exports.insertClass = function (req, res) {
-  var classess = [];
-  let classes = {
+  var phanDoan = [];
+  let phandoan = {
     name: req.body.name,
   }
-  classess.push(classes);
+  phanDoan.push(phandoan);
 
-  Classes.collection.insertMany(classess, (err) => {
+  PhanDoan.collection.insertMany(phanDoan, (err) => {
     if (err) {
       res.json({ result: 0, error: err });
     } else {
       console.log("finish");
-      res.redirect("/classes");
+      res.redirect("/phandoan");
     }
   });
 };
 
 module.exports.edit = function (req, res) {
-  Classes.findById(req.params.id, function (err, item) {
+  PhanDoan.findById(req.params.id, function (err, item) {
     if (err) {
       res.json({ result: 0, error: err });
     } else {
-      res.render("classes/edit", { classes: item });
+      res.render("phandoan/edit", { phanDoan: item });
     }
   });
 }
 
 module.exports.editClass = function (req, res) {
-  Classes.updateOne(
+  PhanDoan.updateOne(
     { _id: req.body.classClassesID },
     {
       name: req.body.name,
@@ -53,17 +53,17 @@ module.exports.editClass = function (req, res) {
       if (err) {
         res.json({ result: 0, error: err });
       } else {
-        res.redirect("/classes");
+        res.redirect("/phandoan");
       }
     }
   );
 }
 module.exports.deleteClass = function (req, res) {
-  Classes.deleteOne({ _id: req.params.id }, function (err) {
+  PhanDoan.deleteOne({ _id: req.params.id }, function (err) {
     if (err) {
       res.json({ result: 0, error: err });
     } else {
-      res.redirect("/classes");
+      res.redirect("/phandoan");
     }
   });
 }

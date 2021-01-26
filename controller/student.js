@@ -1,5 +1,5 @@
 const Student = require("../models/student");
-const Classes = require("../models/classes");
+const PhanDoan = require("../models/phandoan");
 
 
 
@@ -7,11 +7,11 @@ const Classes = require("../models/classes");
 const bodyParser = require("body-parser");
 
 module.exports.add = function (req, res) {
-  Classes.find(function (err, dataclasses) {
+  PhanDoan.find(function (err, dataPhanDoan) {
     if (err) {
       res.json({ result: 0, error: err });
     } else {
-      res.render("student/add", { classess: dataclasses });
+      res.render("student/add", { phanDoan: dataPhanDoan });
     }
   });
 };
@@ -22,7 +22,7 @@ module.exports.insertStudent = function (req, res) {
   let student = {
     name: req.body.name,
     email: req.body.email,
-    class: req.body.classes,
+    class: req.body.phandoan,
   };
   students.push(student);
   //}
@@ -38,7 +38,7 @@ module.exports.insertStudent = function (req, res) {
 
 
 module.exports.edit = async function (req, res) {
-  const data = await Classes.find(function (err, data) {
+  const data = await PhanDoan.find(function (err, data) {
     if (err) {
       res.json({ result: 0, error: err });
     } else {
@@ -52,7 +52,7 @@ module.exports.edit = async function (req, res) {
       return item;
     }
   });
-  res.render("student/edit", { student: item, classes: data });
+  res.render("student/edit", { student: item, phandoan: data });
 };
 
 module.exports.editStudent = function (req, res) {
@@ -61,7 +61,7 @@ module.exports.editStudent = function (req, res) {
     {
       name: req.body.name,
       email: req.body.email,
-      class: req.body.classes,
+      class: req.body.phandoan,
     },
     function (err) {
       if (err) {

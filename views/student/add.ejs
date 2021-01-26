@@ -26,9 +26,11 @@
       <div class="form-group">
         <label for="Class">Class</label>
         <select class="form-control" name="classes" id="exampleFormControlSelect1">
-          <% classess.forEach(function(item){ %>
-          <option value="<%- item.id %>"><%- item.name %></option>
-          <% }); %>
+          <% phanDoan.forEach(function(item){ %>
+            <option value="<%- item.id %>">
+              <%- item.name %>
+            </option>
+            <% }); %>
         </select>
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
