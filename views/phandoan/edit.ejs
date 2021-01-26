@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JG Template</title>
+  <title>Thánh Cẩm</title>
   <!-- bootstrap CSS -->
   <link rel="stylesheet" href="/assets/css/bootstrap.css">
   </style>
@@ -48,28 +48,21 @@
   </nav>
   <div class="content-area">
     <!-- MENU -->
-    <div class="menu">
-      <button class="btn_menu ">
-        <i class="fas fa-home"></i>
-        <span>Dashboard</span>
-      </button>
-      <button class="btn_menu">
-        <i class="fas fa-plus-circle"></i>
-        <span>Quản lý thiếu nhi</span>
-      </button>
-      <button class="btn_menu active">
-        <i class="fas fa-folder"></i>
-        <span>Quản lý ngành</span>
-      </button>
-      <button class="btn_menu">
-        <i class="fas fa-users"></i>
-        <span>Quản lý lớp</span>
-      </button>
-      <button class="btn_menu last">
-        <i class="fas fa-th-large"></i>
-        <span>Điểm thi</span>
-      </button>
-    </div>
+    <nav id="navbar_top" class="navbar navbar-light ">
+      <a class="navbar-brand mx-auto" href="#">Xứ Đoàn Các Thánh Tử Đạo Việt Nam</a>
+      <!-- <form class="form-inline search-box">
+        <div class="input-group">
+          <input type="search" class="form-control" placeholder="Pesquisar" aria-label="Pesquisar">
+        </div>
+      </form> -->
+      <div class="user_bar">
+        <button class="btn rounded-circle"><i class="far fa-commenting"></i></button>
+        <button class="btn rounded-circle"><i class="fa fa-cog"></i></button>
+        <button class="rounded-circle bg-light" style="width: 50px; height: 50px;">
+          <i class="far fa-user"></i>
+        </button>
+      </div>
+    </nav>
     <div class="content">
       <nav>
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -85,10 +78,10 @@
             <h5>Cập nhật ngành</h5>
             <hr>
             <div class="form-group row">
-              <label for="inputPassword3" class="col-sm-2 col-form-label">Tên ngành</label>
+              <label for="inputPassword3" class="col-sm-2 col-form-label">Nhập tên ngành</label>
               <div class="col-sm-10">
-                <input type="text" name="name" value="<%- phanDoan.name %>" class="form-control" id="inputPassword3"
-                  placeholder="Tên ngành">
+                <input required type="text" name="name" value="<%- phanDoan.name %>" class="form-control"
+                  id="inputPassword3" placeholder="Tên ngành">
               </div>
             </div>
             <div class="col text-center">

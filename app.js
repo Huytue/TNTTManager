@@ -5,6 +5,7 @@ var bodyParser = require("body-parser");
 
 const routeStudent = require('./routes/student');
 const routePhanDoan = require('./routes/phandoan');
+const routeChiDoan = require('./routes/chidoan');
 const routeAdmin = require('./routes/admin');
 const routeHome = require('./routes/home');
 
@@ -32,6 +33,7 @@ mongoose.connect("mongodb://localhost/StudentManagement", {
 
 app.use("/student", routeStudent);
 app.use("/phandoan", routePhanDoan);
+app.use("/chidoan", routeChiDoan);
 app.use("/admin", routeAdmin);
 app.use("/", routeHome);
 app.listen(3000);

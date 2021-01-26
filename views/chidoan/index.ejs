@@ -59,7 +59,7 @@
 			</button>
 			<button class="btn_menu active">
 				<i class="fas fa-folder"></i>
-				<span> <a href="/phandoan">Quản lý
+				<span> <a href="/chidoan">Quản lý
 						ngành</a> </span>
 			</button>
 			<button class="btn_menu">
@@ -76,7 +76,7 @@
 				<div class="nav nav-tabs" id="nav-tab" role="tablist">
 					<a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
 						aria-controls="nav-home" aria-selected="true"> Danh sách</a>
-					<a class="nav-item nav-link" id="nav-contact-tab" href="/phandoan/add">Thêm ngành mới</a>
+					<a class="nav-item nav-link" id="nav-contact-tab" href="/chidoan/add">Thêm ngành mới</a>
 				</div>
 			</nav>
 			<div class="tab-content p-3" id="nav-tabContent">
@@ -91,7 +91,7 @@
 										<div class="">STT</div>
 									</td>
 									<td>
-										<div class="">Tên Ngành</div>
+										<div class="">Tên Lớp</div>
 									</td>
 									<td>
 										<div class="">Cập nhật</div>
@@ -101,7 +101,7 @@
 									</td>
 								</tr>
 							</tbody>
-							<% phanDoan.forEach(function(item){ %>
+							<% chiDoan.forEach(function(item){ %>
 								<tbody>
 									<tr>
 										<td>
@@ -115,11 +115,11 @@
 											</div>
 										</td>
 										<td>
-											<a href="/phandoan/edit/<%-item._id%>" class="btn text-secondary"><i
+											<a href="/chidoan/edit/<%-item._id%>" class="btn text-secondary"><i
 													class="fa fa-edit"></i> </a>
 										</td>
 										<td colspan="2">
-											<a href="/phandoan/delete/<%-item._id%>" class="btn text-secondary"><i
+											<a href="/chidoan/delete/<%-item._id%>" class="btn text-secondary"><i
 													class="fa fa-trash"></i> </a>
 										</td>
 									</tr>

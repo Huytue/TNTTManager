@@ -73,22 +73,32 @@
     <div class="content">
       <nav>
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
-          <a class="nav-item nav-link " id="nav-home-tab" href="/phandoan"> Danh sách</a>
+          <a class="nav-item nav-link " id="nav-home-tab" href="/chidoan"> Danh sách</a>
           <a class="nav-item nav-link active" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab"
-            aria-controls="nav-contact" aria-selected="true">Thêm ngành mới</a>
+            aria-controls="nav-contact" aria-selected="true">Thêm lớp mới</a>
         </div>
       </nav>
       <div class="tab-content p-3" id="nav-tabContent">
         <div class="tab-pane fade show active" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-          <form action="/phandoan/add" method="POST" class="list p-4">
-            <h5>Thêm ngành</h5>
+          <form action="/chidoan/add" method="POST" class="list p-4">
+            <h5>Thêm lớp</h5>
             <hr>
             <div class="form-group row">
-              <label for="inputPassword3" class="col-sm-2 col-form-label">Nhập tên ngành</label>
+              <label for="inputName" class="col-sm-2 col-form-label">Nhập tên lớp</label>
               <div class="col-sm-10">
-                <input required type="text" name="name" class="form-control" id="inputPassword3" placeholder="Tên ngành"
+                <input required type="text" name="name" class="form-control" id="inputName" placeholder="Tên lớp"
                   pattern="{8,}">
               </div>
+            </div>
+            <div class="form-group ">
+              <label for="selectClass" class="col-sm-2 col-form-label">Chọn lớp</label>
+              <select class="form-control form-select" id="selectClass">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
             </div>
             <div class="col text-center">
               <button class="btn btn-sm btn-success">Thêm</button>
