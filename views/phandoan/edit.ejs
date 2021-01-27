@@ -31,13 +31,13 @@
 
 <body>
   <!-- NAVBAR -->
-  <nav id="navbar_top" class="navbar navbar-light">
-    <a class="navbar-brand" href="#">JG</a>
-    <form class="form-inline search-box">
-      <div class="input-group">
-        <input type="search" class="form-control" placeholder="Pesquisar" aria-label="Pesquisar">
-      </div>
-    </form>
+  <nav id="navbar_top" class="navbar navbar-light ">
+    <a class="navbar-brand mx-auto" href="#">Xứ Đoàn Các Thánh Tử Đạo Việt Nam</a>
+    <!-- <form class="form-inline search-box">
+        <div class="input-group">
+          <input type="search" class="form-control" placeholder="Pesquisar" aria-label="Pesquisar">
+        </div>
+      </form> -->
     <div class="user_bar">
       <button class="btn rounded-circle"><i class="far fa-commenting"></i></button>
       <button class="btn rounded-circle"><i class="fa fa-cog"></i></button>
@@ -48,21 +48,29 @@
   </nav>
   <div class="content-area">
     <!-- MENU -->
-    <nav id="navbar_top" class="navbar navbar-light ">
-      <a class="navbar-brand mx-auto" href="#">Xứ Đoàn Các Thánh Tử Đạo Việt Nam</a>
-      <!-- <form class="form-inline search-box">
-        <div class="input-group">
-          <input type="search" class="form-control" placeholder="Pesquisar" aria-label="Pesquisar">
-        </div>
-      </form> -->
-      <div class="user_bar">
-        <button class="btn rounded-circle"><i class="far fa-commenting"></i></button>
-        <button class="btn rounded-circle"><i class="fa fa-cog"></i></button>
-        <button class="rounded-circle bg-light" style="width: 50px; height: 50px;">
-          <i class="far fa-user"></i>
-        </button>
-      </div>
-    </nav>
+    <div class="menu">
+      <button class="btn_menu ">
+        <i class="fas fa-home"></i>
+        <span>Dashboard</span>
+      </button>
+      <button class="btn_menu">
+        <i class="fas fa-plus-circle"></i>
+        <span><a href="/admin/login">Quản lý thiếu nhi</a> </span>
+      </button>
+      <button class="btn_menu active">
+        <i class="fas fa-folder"></i>
+        <span> <a href="/phandoan">Quản lý ngành</a> </span>
+      </button>
+      <button class="btn_menu">
+        <i class="fas fa-users"></i>
+        <span> <a href="/chidoan">Quản lý lớp</a> </span>
+        <span></span>
+      </button>
+      <button class="btn_menu last">
+        <i class="fas fa-th-large"></i>
+        <span>Điểm thi</span>
+      </button>
+    </div>
     <div class="content">
       <nav>
         <div class="nav nav-tabs" id="nav-tab" role="tablist">

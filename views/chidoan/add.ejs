@@ -55,15 +55,16 @@
       </button>
       <button class="btn_menu">
         <i class="fas fa-plus-circle"></i>
-        <span>Quản lý thiếu nhi</span>
+        <span><a href="/admin/login">Quản lý thiếu nhi</a> </span>
+      </button>
+      <button class="btn_menu ">
+        <i class="fas fa-folder"></i>
+        <span> <a href="/phandoan">Quản lý ngành</a> </span>
       </button>
       <button class="btn_menu active">
-        <i class="fas fa-folder"></i>
-        <span>Quản lý ngành</span>
-      </button>
-      <button class="btn_menu">
         <i class="fas fa-users"></i>
-        <span>Quản lý lớp</span>
+        <span> <a href="/chidoan">Quản lý lớp</a> </span>
+        <span></span>
       </button>
       <button class="btn_menu last">
         <i class="fas fa-th-large"></i>
@@ -92,12 +93,12 @@
             </div>
             <div class="form-group ">
               <label for="selectClass" class="col-sm-2 col-form-label">Chọn lớp</label>
-              <select class="form-control form-select" id="selectClass">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
+              <select class="form-control form-select" name="phanDoan" id="selectClass">
+                <% phanDoan.forEach(function(item){ %>
+                  <option value="<%- item.id %>">
+                    <%- item.name %>
+                  </option>
+                  <% }); %>
               </select>
             </div>
             <div class="col text-center">

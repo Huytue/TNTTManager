@@ -1,6 +1,5 @@
-
-
 const ChiDoan = require("../models/chidoan");
+const PhanDoan = require("../models/phandoan");
 
 module.exports.index = function (req, res) {
 	ChiDoan.find(function (err, data) {
@@ -13,13 +12,20 @@ module.exports.index = function (req, res) {
 }
 
 module.exports.add = function (req, res) {
-	res.render("chidoan/add");
+	PhanDoan.find(function (err, dataPhanDoan) {
+		if (err) {
+			res.json({ result: 0, error: err });
+		} else {
+			res.render("chidoan/add", { phanDoan: dataPhanDoan });
+		}
+	});
 }
 
 module.exports.insertClass = function (req, res) {
 	var chiDoan = [];
 	let chidoan = {
 		name: req.body.name,
+		phanDoan: req.body.phanDoan,
 	}
 	chiDoan.push(chidoan);
 
@@ -33,14 +39,24 @@ module.exports.insertClass = function (req, res) {
 	});
 };
 
-module.exports.edit = function (req, res) {
-	ChiDoan.findById(req.params.id, function (err, item) {
+module.exports.edit = async function (req, res) {
+	const data = await PhanDoan.find(function (err, data) {
 		if (err) {
 			res.json({ result: 0, error: err });
 		} else {
-			res.render("chidoan/edit", { chiDoan: item });
+			return data;
 		}
 	});
+	const item = await ChiDoan.findById(req.params.id, function (err, item) {
+		if (err) {
+			res.json({ result: 0, error: err });
+		} else {
+			return item;
+		}
+	});
+	res.render("chidoan/edit", { chiDoan: item, phanDoan: data });
+
+
 }
 
 module.exports.editClass = function (req, res) {

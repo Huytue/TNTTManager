@@ -31,13 +31,13 @@
 
 <body>
   <!-- NAVBAR -->
-  <nav id="navbar_top" class="navbar navbar-light">
-    <a class="navbar-brand" href="#">JG</a>
-    <form class="form-inline search-box">
-      <div class="input-group">
-        <input type="search" class="form-control" placeholder="Pesquisar" aria-label="Pesquisar">
-      </div>
-    </form>
+  <nav id="navbar_top" class="navbar navbar-light ">
+    <a class="navbar-brand mx-auto" href="#">Xứ Đoàn Các Thánh Tử Đạo Việt Nam</a>
+    <!-- <form class="form-inline search-box">
+        <div class="input-group">
+          <input type="search" class="form-control" placeholder="Pesquisar" aria-label="Pesquisar">
+        </div>
+      </form> -->
     <div class="user_bar">
       <button class="btn rounded-circle"><i class="far fa-commenting"></i></button>
       <button class="btn rounded-circle"><i class="fa fa-cog"></i></button>
@@ -48,44 +48,68 @@
   </nav>
   <div class="content-area">
     <!-- MENU -->
-    <nav id="navbar_top" class="navbar navbar-light ">
-      <a class="navbar-brand mx-auto" href="#">Xứ Đoàn Các Thánh Tử Đạo Việt Nam</a>
-      <!-- <form class="form-inline search-box">
-        <div class="input-group">
-          <input type="search" class="form-control" placeholder="Pesquisar" aria-label="Pesquisar">
-        </div>
-      </form> -->
-      <div class="user_bar">
-        <button class="btn rounded-circle"><i class="far fa-commenting"></i></button>
-        <button class="btn rounded-circle"><i class="fa fa-cog"></i></button>
-        <button class="rounded-circle bg-light" style="width: 50px; height: 50px;">
-          <i class="far fa-user"></i>
-        </button>
-      </div>
-    </nav>
+    <div class="menu">
+      <button class="btn_menu ">
+        <i class="fas fa-home"></i>
+        <span>Dashboard</span>
+      </button>
+      <button class="btn_menu">
+        <i class="fas fa-plus-circle"></i>
+        <span><a href="/admin/login">Quản lý thiếu nhi</a> </span>
+      </button>
+      <button class="btn_menu ">
+        <i class="fas fa-folder"></i>
+        <span> <a href="/phandoan">Quản lý ngành</a> </span>
+      </button>
+      <button class="btn_menu active">
+        <i class="fas fa-users"></i>
+        <span> <a href="/chidoan">Quản lý lớp</a> </span>
+        <span></span>
+      </button>
+      <button class="btn_menu last">
+        <i class="fas fa-th-large"></i>
+        <span>Điểm thi</span>
+      </button>
+    </div>
     <div class="content">
       <nav>
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
-          <a class="nav-item nav-link active" id="nav-contact-tab" data-toggle="tab" href="/chidoan/edit" role="tab"
-            aria-controls="nav-contact" aria-selected="true">Cập nhật dữ liệu</a>
-          <a class="nav-item nav-link " href="/chidoan"> Danh sách</a>
-          <a class="nav-item nav-link " href="/chidoan/add"> Thêm ngành mới</a>
+          <a class="nav-item nav-link " id="nav-home-tab" href="/chidoan"> Danh sách</a>
+          <a class="nav-item nav-link active" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab"
+            aria-controls="nav-contact" aria-selected="true">Cập nhật</a>
         </div>
       </nav>
       <div class="tab-content p-3" id="nav-tabContent">
         <div class="tab-pane fade show active" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
           <form action="/chidoan/add" method="POST" class="list p-4">
-            <h5>Cập nhật ngành</h5>
+            <h5>Cập nhật</h5>
             <hr>
             <div class="form-group row">
-              <label for="inputPassword3" class="col-sm-2 col-form-label">Nhập tên ngành</label>
+              <label for="inputName" class="col-sm-2 col-form-label">Nhập tên lớp</label>
               <div class="col-sm-10">
-                <input required type="text" name="name" value="<%- chidoan.name %>" class="form-control"
-                  id="inputPassword3" placeholder="Tên ngành">
+                <input value="<%-chiDoan.name%>" required type=" text" name="name" class="form-control" id="inputName"
+                  placeholder="Tên lớp" pattern="{8,}">
               </div>
             </div>
+            <div class="form-group ">
+              <label for="selectClass" class="col-sm-2 col-form-label">Chọn lớp</label>
+
+              <select class="form-control" name="phanDoan" id="selectClass">
+                <% phanDoan.forEach(function(item){ %>
+                  <% if (item.id===chiDoan._id){%>
+                    <option selected="selected" value="<%- item.id %>">
+                      <%- item.name %>
+                    </option>
+                    <% } else {%>
+                      <option value="<%- item.id %>">
+                        <%- item.name %>
+                      </option>
+                      <% }%>
+                        <% }); %>
+              </select>
+            </div>
             <div class="col text-center">
-              <button class="btn btn-sm btn-success">Cập nhật</button>
+              <button class="btn btn-sm btn-success">Thêm</button>
             </div>
           </form>
         </div>
